@@ -32,7 +32,7 @@ SECRET_KEY = 'django-insecure-e76ovz-6k9&!6zesgt6b&((w@=wi&!!im$nol1*+10v&gvmu7j
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'fee4-140-114-77-237.jp.ngrok.io' #允許的網域名稱
+    'cfcc-140-114-77-237.jp.ngrok.io' #允許的網域名稱
     ]
 
 
