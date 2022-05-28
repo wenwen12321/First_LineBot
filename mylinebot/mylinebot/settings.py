@@ -11,16 +11,18 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 ## 增加 LINE Developers 上所取得的兩個憑證設定，來與LINE頻道(Channel)進行連結
 LINE_CHANNEL_ACCESS_TOKEN = '/k87aLYeTSJ+Eq47BX9fr0JI6rMja3HHHdK5Z2a6nFcxAqe9+9VsKM4yV4Xbgm/q0GuuLkj3k3iJmSfGkYz3ECzVsNFZ2QnTa3pSuTMH5Q13zR4QZWaf7R6H63AbQH9Tj3Jpjcrq63xdQ+/YlPYmjwdB04t89/1O/w1cDnyilFU='
  
 LINE_CHANNEL_SECRET = '56f4b8f11a17b2db36e389e3e16645a9'
 
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+# 新增 static 資料夾的路徑設定
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
@@ -32,7 +34,9 @@ SECRET_KEY = 'django-insecure-e76ovz-6k9&!6zesgt6b&((w@=wi&!!im$nol1*+10v&gvmu7j
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'cfcc-140-114-77-237.jp.ngrok.io' #允許的網域名稱
+    # 'cfcc-140-114-77-237.jp.ngrok.io' #允許的網域名稱
+    # 加入Heroku雲端平台所產生的應用程式網址，允許這個網址的請求(Request)
+    'https://foodlinebot-testing.herokuapp.com/' 
     ]
 
 
